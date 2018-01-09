@@ -13,14 +13,14 @@ const styles = theme => ({
   },
   paper: {
     padding: 16,
-    textAlign: 'center',
+    textAlign: 'left',
     color: theme.palette.text.secondary,
   },
 });
 
 class App extends Component {
   render() {
-    const { classes } = this.props;
+    const {classes} = this.props;
     return (
       <div className={classes.root}>
         <Grid container spacing={24}>

@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 
 const style = {
   checked: {
+    color: 'green',
     textDecoration: 'line-through'
   },
-  unChecked: {
-    color: 'green'
-  }
+  unChecked: {}
 };
 
 class Task extends Component {
@@ -19,13 +18,13 @@ class Task extends Component {
   }
 
   handleChange(event) {
-    this.setState({ checked: event.target.checked });
+    this.setState({checked: event.target.checked});
   }
 
   render() {
-    return(
+    return (
       <div>
-        <input type="checkbox" onChange={this.handleChange} />
+        <input type="checkbox" onChange={this.handleChange}/>
         <span
           style={this.state.checked ? style.checked : style.unChecked}
         >

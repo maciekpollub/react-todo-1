@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import TextField from 'material-ui/TextField';
+import Button from 'material-ui/Button';
+import Grid from 'material-ui/Grid';
 
 import TasksList from './TasksList';
 
@@ -34,23 +37,35 @@ class Container extends Component {
 
   render() {
     return (
-      <div>
-        <input type="text" placeholder="Search..." onChange={this.searchChanged} />
-
-        <form onSubmit={this.handleSubmit}>
-          <input type="text"
-                 value={this.state.task}
-                 placeholder="Add task..."
-                 onChange={this.textChanged}/>
-          <input type="submit" value="Add"/>
-        </form>
-
-        <h2>My tasks</h2>
-        <TasksList
-          query={this.state.query}
-          tasks={this.state.tasks}
-        />
-      </div>
+      <Grid container spacing={24}>
+        <Grid item xs={12} sm={6}>
+          <form onSubmit={this.handleSubmit}>
+            <TextField
+              id="task"
+              label="Task"
+              value={this.state.task}
+              onChange={this.textChanged}
+              margin="normal"
+            />
+            <Button type="submit" raised color="primary">Add</Button>
+          </form>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <TextField
+            id="task"
+            label="Search"
+            onChange={this.searchChanged}
+            margin="normal"
+          />
+        </Grid>
+        <Grid item xs={12} sm={12}>
+          <h2>My tasks</h2>
+          <TasksList
+            query={this.state.query}
+            tasks={this.state.tasks}
+          />
+        </Grid>
+      </Grid>
     );
   }
 }
