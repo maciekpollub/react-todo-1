@@ -2,7 +2,7 @@
   "name": "react-todo",
   "version": "0.1.0",
   "private": false,
-  "homepage": "http://patrykomiotek.github.io/react-todo",
+  "homepage": "https://patrykomiotek.github.io/react-todo/",
   "dependencies": {
     "material-ui": "^1.0.0-beta.27",
     "material-ui-icons": "^1.0.0-beta.17",

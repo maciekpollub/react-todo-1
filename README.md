@@ -20,4 +20,4 @@ npm start
 ```
 
 ## Online demo
-Visit: http://patrykomiotek.github.io/react-todo
+Visit: https://patrykomiotek.github.io/react-todo/
