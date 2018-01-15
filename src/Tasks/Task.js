@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import { ListItem, ListItemSecondaryAction, ListItemText } from 'material-ui/List';
+import IconButton from 'material-ui/IconButton';
+import DeleteIcon from 'material-ui-icons/Delete';
+import Checkbox from 'material-ui/Checkbox';
+
 
 const style = {
   checked: {
@@ -23,14 +28,15 @@ class Task extends Component {
 
   render() {
     return (
-      <div>
-        <input type="checkbox" onChange={this.handleChange}/>
-        <span
-          style={this.state.checked ? style.checked : style.unChecked}
-        >
-          {this.props.label}
-        </span>
-      </div>
+      <ListItem>
+        <Checkbox onChange={this.handleChange}/>
+        <ListItemText primary={this.props.label} style={this.state.checked ? style.checked : style.unChecked} />
+        <ListItemSecondaryAction>
+          <IconButton aria-label="Delete">
+            <DeleteIcon onClick={() => this.props.onRemove(this.props.label)} />
+          </IconButton>
+        </ListItemSecondaryAction>
+      </ListItem>
     );
   }
 }

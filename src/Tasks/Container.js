@@ -17,6 +17,7 @@ class Container extends Component {
     this.textChanged = this.textChanged.bind(this);
     this.searchChanged = this.searchChanged.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleOnRemove = this.handleOnRemove.bind(this);
   }
 
   textChanged(event) {
@@ -33,6 +34,13 @@ class Container extends Component {
       task: ''
     });
     event.preventDefault();
+  }
+
+  handleOnRemove(taskToRemove) {
+    this.setState({
+      tasks: this.state.tasks.filter(task => task !== taskToRemove),
+      task: ''
+    });
   }
 
   render() {
@@ -63,6 +71,7 @@ class Container extends Component {
           <TasksList
             query={this.state.query}
             tasks={this.state.tasks}
+            onRemove={this.handleOnRemove}
           />
         </Grid>
       </Grid>
