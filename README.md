@@ -22,7 +22,7 @@ npm start
 ## Online demo
 Visit: https://patrykomiotek.github.io/react-todo/
 
-## Other version
+## Other versions
 * [react-todo-redux](https://github.com/patrykomiotek/react-todo-redux)
 * react-todo-firebase (TBD)
 
